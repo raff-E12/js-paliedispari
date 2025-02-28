@@ -9,16 +9,26 @@ let condition = true;
 
 //Creazione della funzione di convalidazione
 
-function Words_Ver(words){
-  if (words === 'Palindroma') {
-    while (list_words[0] === 5 && condition !== false){
-        console.log('Complementi, sei riuscito a superare la prova di oggi');
-        index++;
+function Words_Ver(input) {
+   while (index < list_words.length && condition === true) {
+      if (list_words[index] === 'Palindroma') {
+        if (input === 'Palindroma') {
+            input = window.alert('Complimenti, hai vinto la sfida di oggi.');
+            console.log('Complimenti, hai vinto la sfida di oggi.');
+        } else {
+            input = window.alert('Mi dispiace, non hai vinto la sfida di oggi.');
+            console.log('Mi dispiace, non hai vinto la sfida di oggi.');
+        }
+        condition = false;
         break
-    }
-  } else{
-    console.log('Mi dispiace, hai perso la tua occassione quindi riprova la tua occassione');
-  }
+      }
+      index++;
+   }
+   if (condition === false) {
+    input = window.alert('Hai esaurito il tentativo, ricarica la pagina per riprovare.')
+    console.log('Hai esaurito il tentativo, ricarica la pagina per riprovare.');
+   }
 }
 
+//Implementazione della funzione
 Words_Ver(input_user_par);
