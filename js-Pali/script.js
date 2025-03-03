@@ -3,12 +3,22 @@
 
 //Definire le variabili per l'operazioni
 let input_user_par = window.prompt('Inserisci una parola a piacere:', '');
-const reverse_palindroma = input_user_par.split("").reverse().join("");
+// const reverse_palindroma = input_user_par.split("").reverse().join("");
+let reverse = '';
+let reverse_cycle = ()=>{
+  for (let index = input_user_par.length - 1; index >= 0; index--) { // Soluzione: per ogni diminuzione dell'indice si compone la 
+  // parola al contrario in modo da corrispondere a quella palindroma grazie al ciclo.
+    reverse += input_user_par[index];
+    console.log(reverse);
+  }
+  return reverse;
+}
 
 //Creazione della funzione di convalidazione
 
 function Words_Ver(input) {
-  if (input === reverse_palindroma) {
+  const reverse_word = reverse_cycle();
+  if (input === reverse_word) {
     window.alert('La parola che hai scelto è correttamente corrispondente a un palindromo.');
     console.log('La parola che hai scelto è correttamente corrispondente a un palindromo.');
   } else {
